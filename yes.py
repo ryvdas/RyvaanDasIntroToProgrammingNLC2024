@@ -20,6 +20,9 @@ tab1, tab2, tab3 = st.tabs(["Enter a Class", "Your Classes", "Insights and Resul
 
 classData_df = pd.read_csv('classData.csv')
 
+def updateClassData():
+     classData = st.dataframe(data=classData_df, hide_index=True)
+
 with tab1:
     rigor = st.radio(
         "Select the class's rigor level:",
@@ -80,6 +83,7 @@ with tab2:
             classData_df = classData_df.drop(i)
             #classData = st.dataframe(data=classData_df, hide_index=True)
             classData_df.to_csv('classData.csv', index = False)
+            updateClassData()
 
     if deleteButton:
         classOptions = []
@@ -95,4 +99,4 @@ with tab2:
         #print(classOptions)
         classDeleter = st.selectbox(label="Select the class to delete:", options=classOptions, index=None, on_change=deleteClassCall)
 
-    classData = st.dataframe(data=classData_df, hide_index=True)
+    updateClassData()
