@@ -110,9 +110,24 @@ with tab2:
 
     # updateClassData()
     #classData = st.dataframe(data=classData_df, hide_index=True)
-    newclassData_df = st.data_editor(classData_df,
+    csvfn = 'classData.csv'
+
+    def update(edf):
+        edf.to_csv(csvfn, index=False)
+        load_df.clear()
+        
+
+    @st.cache_data(ttl='1d')
+    def load_df():
+        return pd.read_csv(csvfn)
+
+
+    classData_df = load_df()
+    edf = st.data_editor(classData_df,
                                      num_rows='dynamic',
                                      column_config={'ClassRigor':'Rigor',
                                                     'ClassName': 'Name',
-                                                    'GradeEarned': 'Grade'},
-                                    on_change=updateClassData)
+                                                    'GradeEarned': 'Grade'})
+    st.button('Save', on_click=update, args=(edf, ))
+
+    
