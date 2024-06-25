@@ -21,8 +21,8 @@ tab1, tab2, tab3 = st.tabs(["Enter a Class", "Your Classes", "Insights and Resul
 classData_df = pd.read_csv('classData.csv')
 
 def updateClassData():
-    with tab2:
-        classData = st.dataframe(data=classData_df, hide_index=True)
+    
+    classData_df.to_csv('classData.csv', index = False)
 
 with tab1:
     rigor = st.radio(
@@ -109,6 +109,9 @@ with tab2:
 
     # updateClassData()
     classData = st.dataframe(data=classData_df, hide_index=True)
-    classDataEdited = st.data_editor(classData_df,
+    classData_df = st.data_editor(classData_df,
                                      num_rows='dynamic',
-                                     column_config={'ClassRigor':'Rigor', 'ClassName': 'Name', 'GradeEarned': 'Grade'})
+                                     column_config={'ClassRigor':'Rigor',
+                                                    'ClassName': 'Name',
+                                                    'GradeEarned': 'Grade'},
+                                    on_change=updateClassData)
