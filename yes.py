@@ -123,6 +123,7 @@ with tab2:
 
 
     classData_df = load_df()
+    st.write("Edit your classes below!")
     edf = st.data_editor(classData_df,
                                      num_rows='dynamic',
                                      column_config={'ClassRigor':'Rigor',
