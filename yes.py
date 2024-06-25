@@ -75,6 +75,7 @@ with tab2:
 
     def deleteClassCall():
         l = classDeleter.split(', ')
+        l
         rigor = l[0]
         name = l[1]
         grade = int(l[2])
