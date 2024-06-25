@@ -20,11 +20,6 @@ tab1, tab2, tab3 = st.tabs(["Enter a Class", "Your Classes", "Insights and Resul
 
 classData_df = pd.read_csv('classData.csv')
 
-def updateClassData():
-    
-    newclassData_df.to_csv('classData.csv', index = False)
-    classData_df = pd.read_csv('classData.csv')
-
 with tab1:
     rigor = st.radio(
         "Select the class's rigor level:",
@@ -131,4 +126,3 @@ with tab2:
                                                     'GradeEarned': 'Grade'})
     st.button('Save', on_click=update, args=(edf, ))
 
-    
