@@ -22,7 +22,8 @@ classData_df = pd.read_csv('classData.csv')
 
 def updateClassData():
     
-    classData_df.to_csv('classData.csv', index = False)
+    newclassData_df.to_csv('classData.csv', index = False)
+    classData_df = pd.read_csv('classData.csv')
 
 with tab1:
     rigor = st.radio(
@@ -109,7 +110,7 @@ with tab2:
 
     # updateClassData()
     #classData = st.dataframe(data=classData_df, hide_index=True)
-    classData_df = st.data_editor(classData_df,
+    newclassData_df = st.data_editor(classData_df,
                                      num_rows='dynamic',
                                      column_config={'ClassRigor':'Rigor',
                                                     'ClassName': 'Name',
