@@ -71,6 +71,7 @@ with tab2:
     if deleteButton:
         classDeleter = st.selectbox(label="Select the class to delete:", options=classData_df)
         if classDeleter:
+            print(classDeleter)
             classData_df = classData_df.drop([str(classDeleter)], inplace=True)
             #classData = st.dataframe(data=classData_df, hide_index=True)
             classData_df.to_csv('classData.csv', index = False)
