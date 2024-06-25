@@ -75,17 +75,17 @@ with tab2:
 
     def deleteClassCall():
         l = classDeleter.split(', ')
-        l
-        rigor = l[0]
-        name = l[1]
-        grade = int(l[2])
-        deleteClass(classData_df, rigor, name, grade)
+        print(l)
+        classrigor = l[0]
+        classname = l[1]
+        classgrade = int(l[2])
+        deleteClass(classData_df, classrigor, classname, classgrade)
 
-    def deleteClass(classData_df, rigor, name, grade):
+    def deleteClass(df, xrigor, xname, xgrade):
             #classData_df = classData_df.drop(labels=[str(classDeleter)], inplace=True)
-            i = classData_df[((classData_df.ClassRigor == rigor) &
-                              (classData_df.ClassName == name) &
-                              (classData_df.GradeEarned == grade))].index
+            i = df[((df.ClassRigor == xrigor) &
+                              (df.ClassName == xname) &
+                              (df.GradeEarned == xgrade))].index
             classData_df = classData_df.drop(i)
             #classData = st.dataframe(data=classData_df, hide_index=True)
             classData_df.to_csv('classData.csv', index = False)
