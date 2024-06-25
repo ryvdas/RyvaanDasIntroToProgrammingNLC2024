@@ -71,10 +71,14 @@ with tab2:
     if deleteButton:
         classOptions = []
         for i in classData_df.index:
-            classOptions.append(list(classData_df["Class Rigor"][i] + ', ' 
-                                     + classData_df["Class Name"] + ', ' 
-                                     + str(classData_df["Grade Earned"])))
-        print(classOptions)
+            rigor = str(classData_df["Class Rigor"][i])
+            name = str(classData_df["Class Name"][i])
+            grade = str(classData_df["Grade Earned"][i])
+            print(rigor, name, grade)
+            #classOptions.append(list(classData_df["Class Rigor"][i] + ', ' 
+            #                         + classData_df["Class Name"][i] + ', ' 
+            #                         + str(classData_df["Grade Earned"][i])))
+        #print(classOptions)
         classDeleter = st.selectbox(label="Select the class to delete:", options=classOptions)
         if classDeleter:
             print(classDeleter)
