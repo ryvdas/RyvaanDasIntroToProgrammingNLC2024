@@ -102,6 +102,8 @@ with tab2:
             #                         + classData_df["ClassName"][i] + ', ' 
             #                         + str(classData_df["GradeEarned"][i])))
         #print(classOptions)
-        classDeleter = st.selectbox(label="Select the class to delete:", options=classOptions, index=None, on_change=deleteClassCall)
+        classDeleter = st.selectbox(label="Select the class to delete:", 
+                                    options=classOptions, 
+                                    on_change=deleteClassCall)
 
     updateClassData()
