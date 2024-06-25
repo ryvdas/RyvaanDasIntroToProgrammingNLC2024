@@ -74,13 +74,17 @@ with tab2:
     deleteButton = st.button("Delete a Class")
 
     def deleteClassCall():
+        l = classDeleter.split(', ')
+        rigor = l[0]
+        name = l[1]
+        grade = int(l[2])
         deleteClass(classData_df, rigor, name, grade)
 
     def deleteClass(classData_df, rigor, name, grade):
             #classData_df = classData_df.drop(labels=[str(classDeleter)], inplace=True)
             i = classData_df[((classData_df.ClassRigor == rigor) &
                               (classData_df.ClassName == name) &
-                              (classData_df.GradeEarned == int(grade)))].index
+                              (classData_df.GradeEarned == grade))].index
             classData_df = classData_df.drop(i)
             #classData = st.dataframe(data=classData_df, hide_index=True)
             classData_df.to_csv('classData.csv', index = False)
