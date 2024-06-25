@@ -108,7 +108,7 @@ with tab2:
     #                                 on_change=deleteClassCall)
 
     # updateClassData()
-    classData = st.dataframe(data=classData_df, hide_index=True)
+    #classData = st.dataframe(data=classData_df, hide_index=True)
     classData_df = st.data_editor(classData_df,
                                      num_rows='dynamic',
                                      column_config={'ClassRigor':'Rigor',
