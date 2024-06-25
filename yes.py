@@ -67,5 +67,10 @@ with tab2:
     #     classData_df.to_csv('classData.csv', index = False)
 
     # newFile = st.file_uploader(label="Load from CSV", type=['csv'], on_change=updateClassData)
-
+    deleteButton = st.button("Delete a Class")
+    if deleteButton:
+        classDeleter = st.selectbox(label="Select the class to delete:", options=classData_df)
+        deleteSubmitButton = st.button("Confirm")
+        if deleteSubmitButton:
+            classData_df = classData_df.drop(classDeleter, inplace=True)
     classData = st.dataframe(data=classData_df, hide_index=True)
