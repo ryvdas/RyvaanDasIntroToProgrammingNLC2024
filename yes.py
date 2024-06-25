@@ -80,9 +80,8 @@ with tab2:
             #                         + classData_df["Class Name"][i] + ', ' 
             #                         + str(classData_df["Grade Earned"][i])))
         #print(classOptions)
-        classDeleter = st.selectbox(label="Select the class to delete:", options=classOptions)
-        if classDeleter:
-            print(classDeleter)
+        classDeleter = st.selectbox(label="Select the class to delete:", options=classOptions, index=None, on_change=deleteClass)
+        def deleteClass():
             classData_df = classData_df.drop([str(classDeleter)], inplace=True)
             #classData = st.dataframe(data=classData_df, hide_index=True)
             classData_df.to_csv('classData.csv', index = False)
