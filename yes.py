@@ -80,6 +80,7 @@ with tab2:
             classData_df = classData_df.drop(i)
             #classData = st.dataframe(data=classData_df, hide_index=True)
             classData_df.to_csv('classData.csv', index = False)
+            classData = st.dataframe(data=classData_df, hide_index=True)
 
     if deleteButton:
         classOptions = []
