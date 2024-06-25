@@ -71,40 +71,44 @@ with tab2:
     #     classData_df.to_csv('classData.csv', index = False)
 
     # newFile = st.file_uploader(label="Load from CSV", type=['csv'], on_change=updateClassData)
-    deleteButton = st.button("Delete a Class")
+    # deleteButton = st.button("Delete a Class")
 
-    def deleteClassCall():
-        l = classDeleter.split(', ')
-        print(l)
-        classrigor = l[0]
-        classname = l[1]
-        classgrade = int(l[2])
-        deleteClass(classData_df, classrigor, classname, classgrade)
+    # def deleteClassCall():
+    #     l = classDeleter.split(', ')
+    #     print(l)
+    #     classrigor = l[0]
+    #     classname = l[1]
+    #     classgrade = int(l[2])
+    #     deleteClass(classData_df, classrigor, classname, classgrade)
 
-    def deleteClass(df, xrigor, xname, xgrade):
-            #classData_df = classData_df.drop(labels=[str(classDeleter)], inplace=True)
-            i = df[((df.ClassRigor == xrigor) &
-                              (df.ClassName == xname) &
-                              (df.GradeEarned == xgrade))].index
-            df = df.drop(i)
-            #classData = st.dataframe(data=classData_df, hide_index=True)
-            df.to_csv('classData.csv', index = False)
-            updateClassData()
+    # def deleteClass(df, xrigor, xname, xgrade):
+    #         #classData_df = classData_df.drop(labels=[str(classDeleter)], inplace=True)
+    #         i = df[((df.ClassRigor == xrigor) &
+    #                           (df.ClassName == xname) &
+    #                           (df.GradeEarned == xgrade))].index
+    #         df = df.drop(i)
+    #         #classData = st.dataframe(data=classData_df, hide_index=True)
+    #         df.to_csv('classData.csv', index = False)
+    #         updateClassData()
 
-    if deleteButton:
-        classOptions = []
-        for i in classData_df.index:
-            rigor = str(classData_df["ClassRigor"][i])
-            name = str(classData_df["ClassName"][i])
-            grade = str(classData_df["GradeEarned"][i])
+    # if deleteButton:
+    #     classOptions = []
+    #     for i in classData_df.index:
+    #         rigor = str(classData_df["ClassRigor"][i])
+    #         name = str(classData_df["ClassName"][i])
+    #         grade = str(classData_df["GradeEarned"][i])
 
-            classOptions.append(str(rigor + ', ' + name + ', ' + grade))
-            #classOptions.append(list(classData_df["ClassRigor"][i] + ', ' 
-            #                         + classData_df["ClassName"][i] + ', ' 
-            #                         + str(classData_df["GradeEarned"][i])))
-        #print(classOptions)
-        classDeleter = st.selectbox(label="Select the class to delete:", 
-                                    options=classOptions, 
-                                    on_change=deleteClassCall)
+    #         classOptions.append(str(rigor + ', ' + name + ', ' + grade))
+    #         #classOptions.append(list(classData_df["ClassRigor"][i] + ', ' 
+    #         #                         + classData_df["ClassName"][i] + ', ' 
+    #         #                         + str(classData_df["GradeEarned"][i])))
+    #     #print(classOptions)
+    #     classDeleter = st.selectbox(label="Select the class to delete:", 
+    #                                 options=classOptions, 
+    #                                 on_change=deleteClassCall)
 
-    updateClassData()
+    # updateClassData()
+    classData = st.dataframe(data=classData_df, hide_index=True)
+    classDataEdited = st.data_editor(classData_df,
+                                     num_rows='dynamic',
+                                     column_config={'ClassRigor':'Rigor', 'ClassName': 'Name', 'GradeEarned': 'Grade'})
