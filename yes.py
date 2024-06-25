@@ -75,7 +75,7 @@ with tab2:
             name = str(classData_df["Class Name"][i])
             grade = str(classData_df["Grade Earned"][i])
 
-            classOptions.append(rigor, name, grade)
+            classOptions.append(str(rigor + name + grade))
             #classOptions.append(list(classData_df["Class Rigor"][i] + ', ' 
             #                         + classData_df["Class Name"][i] + ', ' 
             #                         + str(classData_df["Grade Earned"][i])))
