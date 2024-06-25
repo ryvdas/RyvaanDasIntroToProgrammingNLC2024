@@ -86,9 +86,9 @@ with tab2:
             i = df[((df.ClassRigor == xrigor) &
                               (df.ClassName == xname) &
                               (df.GradeEarned == xgrade))].index
-            classData_df = classData_df.drop(i)
+            df = df.drop(i)
             #classData = st.dataframe(data=classData_df, hide_index=True)
-            classData_df.to_csv('classData.csv', index = False)
+            df.to_csv('classData.csv', index = False)
             updateClassData()
 
     if deleteButton:
