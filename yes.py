@@ -68,6 +68,12 @@ with tab2:
 
     # newFile = st.file_uploader(label="Load from CSV", type=['csv'], on_change=updateClassData)
     deleteButton = st.button("Delete a Class")
+
+    def deleteClass():
+            classData_df = classData_df.drop(labels=[str(classDeleter)], inplace=True)
+            #classData = st.dataframe(data=classData_df, hide_index=True)
+            classData_df.to_csv('classData.csv', index = False)
+
     if deleteButton:
         classOptions = []
         for i in classData_df.index:
@@ -81,9 +87,5 @@ with tab2:
             #                         + str(classData_df["Grade Earned"][i])))
         #print(classOptions)
         classDeleter = st.selectbox(label="Select the class to delete:", options=classOptions, index=None, on_change=deleteClass)
-        def deleteClass():
-            classData_df = classData_df.drop([str(classDeleter)], inplace=True)
-            #classData = st.dataframe(data=classData_df, hide_index=True)
-            classData_df.to_csv('classData.csv', index = False)
 
     classData = st.dataframe(data=classData_df, hide_index=True)
