@@ -1,27 +1,30 @@
+# import necessary libraries
 import streamlit as st
 import pandas as pd
 import json
-import streamlit as st
 from llama_index.core import VectorStoreIndex, ServiceContext, Document
 from llama_index.llms.openai import OpenAI
 import openai
 from llama_index.core import SimpleDirectoryReader
 
+# page setup
 st.set_page_config(layout="wide")
-
 st.image(image='1.png', width=300)
 st.subheader('The Magical GPA Calculator!')
 st.divider()
 cols = st.columns(2)
 tab1, tab2, tab3, tab4 = st.tabs(["Enter a Class", "Your Classes", "Insights and Results", "Chatbot"])
 
+# access class data
 classData_df = pd.read_csv('data/classData.csv')
 
+# create help menu sidebar and buttons
 with st.sidebar:
     st.title("Help Menu")
     with st.popover("Adding Classes"):
         st.write("To add a class to GPA Genie")
 
+# create 
 with tab1:
     rigor = st.radio(
         "Select the class's rigor level:",
