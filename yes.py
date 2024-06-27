@@ -222,7 +222,7 @@ with tab3:
         update_GPA(enteredClasses)
         update_charts()
 
-openai.api_key = "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"
+openai.api_key = st.secrets.openai_key
 with tab4:
     st.header("Chat with the GPA Genie for personal insights!")
     if "messages" not in st.session_state.keys(): # Initialize the chat message history
