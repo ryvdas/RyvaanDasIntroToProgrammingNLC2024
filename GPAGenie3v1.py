@@ -1,11 +1,6 @@
 import streamlit as st
 import pandas as pd
 import json
-import streamlit as st
-from llama_index.core import VectorStoreIndex, ServiceContext, Document
-from llama_index.llms.openai import OpenAI
-import openai
-from llama_index.core import SimpleDirectoryReader
 
 st.set_page_config(layout="wide")
 
@@ -44,3 +39,25 @@ with tab1:
         classData_df
         #classData_df = classData_df._append({"ClassRigor":rigor,"ClassName":className,"GradeEarned":grade},ignore_index=True)
         classData_df.to_csv('data/classData.csv', index = False)
+
+with tab2:
+    
+    csvfn = 'data/classData.csv'
+
+    def update(edf):
+        edf.to_csv(csvfn, index=False)
+        load_df.clear()
+        
+
+    @st.cache_data(ttl='1d')
+    def load_df():
+        return pd.read_csv(csvfn)
+
+    classData_df = load_df()
+    st.write("Edit your classes below!")
+    edf = st.data_editor(pd.read_csv(csvfn),
+                                     num_rows='dynamic',
+                                     column_config={'ClassRigor':'Rigor',
+                                                    'ClassName': 'Name',
+                                                    'GradeEarned': 'Grade'})
+    st.button('Save', on_click=update, args=(edf, ))
