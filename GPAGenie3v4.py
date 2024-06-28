@@ -39,7 +39,7 @@ with tab1:
     className = st.selectbox("Select the name of your class: ", (classes))
     st.write("You selected: ", f"**:blue[{className}]**")
     
-    grade = st.number_input(label="Enter the Grade Earned: ", min_value=0, max_value=100, value=None, step=1)
+    grade = st.number_input(label="Enter the Grade Earned: ", min_value=0, max_value=100, value=0, step=1)
     st.write("You entered: ", f"**:blue[{grade}]**")
     
     st.write("Are you sure you want to add the ", f"**:blue[{rigor}]**", " class, ", f"**:blue[{className}]**", " with a grade of ", f"**:blue[{grade}]**", "?")
