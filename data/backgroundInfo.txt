@@ -57,7 +57,24 @@ Science: "Physical Science",
         "AP Environmental Science",
         "AP Psychology"
 
-Social Studies: 
+Social Studies: "AP Comparitive Government and Politics",
+        "AP European History",
+        "AP Human Geography",
+        "AP Macroeconomics",
+        "AP United States Government and Politics",
+        "AP United States History",
+        "AP World History",
+        "HIST 2111",
+        "HIST 2112"
 
-Lower grades drag down GPA no matter what type of class it is.
+Arts: "AP 2-D Art and Design",
+        "AP 3-D Art and Design",
+        "AP Art History",
+        "AP Drawing"
 
+Computer Science: "Intro to Software Technology",
+        "AP Computer Science A",
+        "AP Computer Science Principles"
+
+Lower grades drag down GPA no matter what type of class it is (unless the student has all low grades),
+Higher grades increase GPA no matter what type of class it is (unless the student has all high grades)
