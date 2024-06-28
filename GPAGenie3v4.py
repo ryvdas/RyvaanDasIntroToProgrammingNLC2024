@@ -48,7 +48,7 @@ with tab1:
     if classEnterButton:
         
         classData_df.loc[len(classData_df.index)] = [rigor, className, grade]
-        classData_df
+    
         classData_df.to_csv('data/classData.csv', index = False)
 
 with tab2:
