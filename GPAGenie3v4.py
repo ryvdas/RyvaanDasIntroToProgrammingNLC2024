@@ -43,7 +43,7 @@ with tab1:
     st.write("You entered: ", f"**:blue[{grade}]**")
     
     st.write("Are you sure you want to add the ", f"**:blue[{rigor}]**", " class, ", f"**:blue[{className}]**", " with a grade of ", f"**:blue[{grade}]**", "?")
-    #st.write("Are you sure you want to add the ", rigor, " class, ", className, ", with a grade of ", grade, "?")
+    
     classEnterButton = st.button("Confirm")
     if classEnterButton:
         
