@@ -22,7 +22,7 @@ classData_df = pd.read_csv('data/classData.csv')
 with st.sidebar:
     st.title("Help Menu")
     st.write("Click the arrow to collapse")
-    with st.popover("Adding Classes"):
+    with st.popover("Adding Classes", use_container_width=True):
         st.write("1. Go to the 'Enter a Class' tab.")
         st.write("2. From there, enter the rigor of the class using the multiple choice buttons")
         st.write("3. Once you have selected the class type, find the class name in the dropdown below")
@@ -31,16 +31,25 @@ with st.sidebar:
         st.write("6. Check the 'Your Classes' tab and scroll to the bottom to see your new class added!")
     
     with st.popover("Viewing Your Classes", use_container_width=True):
-        st.write("1. Go to the ")
+        st.write("1. Go to the 'Your Classes tab'")
+        st.write("2. You can see a table with all of your classes displayed")
     
-    with st.popover("Editing your Classes"):
-        st.write("1. Go to the ")
+    with st.popover("Deleting and Editing Classes", use_container_width=True):
+        st.write("1. Go to the 'Your Classes' tab")
+        st.write("2. Click the checkbox to the left of the clas you want to delete")
+        st.write("3. Click on the trashcan button in the top right of the table")
+        st.write("4. To edit a class, double click a box to change the grade")
+        st.write("5. To finalize your changes, click the 'Save' button")
 
-    with st.popover("Viewing your GPA"):
-        st.write("1. Go to the")
+    with st.popover("Viewing your GPA", use_container_width=True):
+        st.write("1. Go to the 'Insights and Results' tab")
+        st.write("2. Your weighted and unweighted GPA's are listed")
+        st.write("3. You can also see the number of classes you've taken and the number of classes in each type")
     
-    with st.popover("Using the Chatbot"):
-        st.write("1. ")
+    with st.popover("Using the Chatbot", use_container_width=True):
+        st.write("1. Go to the 'Chatbot' tab")
+        st.write("2. Type a message in the text box and click the send button")
+        st.write("3. The chatbot will respond and you can type a follow up question")
 
 # create 
 with tab1:
