@@ -30,7 +30,7 @@ with st.sidebar:
         st.write("5. Make sure the information in the bottom statement is correct, then press the 'Confirm' button")
         st.write("6. Check the 'Your Classes' tab and scroll to the bottom to see your new class added!")
     
-    with st.popover("Viewing Your Classes"):
+    with st.popover("Viewing Your Classes", use_container_width=True):
         st.write("1. Go to the ")
     
     with st.popover("Editing your Classes"):
