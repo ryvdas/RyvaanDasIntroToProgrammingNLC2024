@@ -21,6 +21,7 @@ classData_df = pd.read_csv('data/classData.csv')
 # create help menu sidebar and buttons
 with st.sidebar:
     st.title("Help Menu")
+    st.write("Click the arrow to collapse")
     with st.popover("Adding Classes"):
         st.write("1. Go to the 'Enter a Class' tab.")
         st.write("2. From there, enter the rigor of the class using the multiple choice buttons")
@@ -28,6 +29,18 @@ with st.sidebar:
         st.write("4. Enter the grade you got in the text box, it must be a number from 0 to 100")
         st.write("5. Make sure the information in the bottom statement is correct, then press the 'Confirm' button")
         st.write("6. Check the 'Your Classes' tab and scroll to the bottom to see your new class added!")
+    
+    with st.popover("Viewing Your Classes"):
+        st.write("1. Go to the ")
+    
+    with st.popover("Editing your Classes"):
+        st.write("1. Go to the ")
+
+    with st.popover("Viewing your GPA"):
+        st.write("1. Go to the")
+    
+    with st.popover("Using the Chatbot"):
+        st.write("1. ")
 
 # create 
 with tab1:
