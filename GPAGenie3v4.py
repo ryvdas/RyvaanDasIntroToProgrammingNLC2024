@@ -34,7 +34,7 @@ with st.sidebar:
         st.write("1. Go to the 'Your Classes tab'")
         st.write("2. You can see a table with all of your classes displayed")
     
-    with st.popover("Deleting and Editing Classes", use_container_width=True):
+    with st.popover("Deleting/Editing Classes", use_container_width=True):
         st.write("1. Go to the 'Your Classes' tab")
         st.write("2. Click the checkbox to the left of the clas you want to delete")
         st.write("3. Click on the trashcan button in the top right of the table")
